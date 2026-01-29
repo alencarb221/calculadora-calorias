@@ -1,0 +1,163 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Playfair Display", serif;
+    background: linear-gradient(135deg, #020617, #222b3f);
+    color: #ffffff;
+}
+
+.head {
+    padding: 30px;
+    text-align: center;
+}
+
+.head h1 {
+    padding-bottom: 20px;
+    font-size: 3.0rem;
+}
+
+.head p {
+    padding-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.calc {
+    border: 1px solid black;
+    border-radius: 15px;
+    max-width: 600px;
+    height: auto;
+    text-align: center;
+    margin: auto;
+    background-color: #ffffff;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+7
+}
+
+#sexo {
+    margin-top: 30px;
+}
+
+label {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #000000;
+}
+
+input, select {
+  background-color: #e5e7eb;
+  color: #111827;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 8px;
+}
+
+
+input:focus {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+select:focus {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+button {
+    width: 250px;
+    height: 40px;
+    margin: 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    background-color: #4f46e5;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+button:hover {
+    background-color: #bab8e0;
+}
+
+#resultado {
+    font-size: 1.2rem;
+    padding-bottom: 15px;
+    color: #000000;
+    font-weight: 700;
+}
+
+.conteudo {
+    width: 70em;
+    text-align: center;
+    padding: 25px;
+    margin: auto;
+}
+
+.conteudo h2 {
+    padding: 15px;
+    font-size: 2rem;
+}
+
+.conteudo h3 {
+    padding: 15px;
+    font-size: 1.5rem;
+}
+
+.conteudo p {
+    padding: 10px;
+    font-size: 1.3rem;
+    word-spacing: 5px;
+}
+
+.conteudo ul {
+    list-style-type: none;
+}
+
+.conteudo ul li {
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+.card01 {
+    background-color: #1e293b;
+    color: #e5e7eb;
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 7px 8px 5px black;
+}
+
+.card02 {
+    background-color: #0f2027;
+    color: #f1f5f9;
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 7px 8px 5px black;
+}
+
+@media (max-width: 800px) {
+    .head h1 {
+        font-size: 2.3rem;
+    }
+
+    .head p {
+        1.2rem
+    }
+    
+    .calc {
+        width: 95%;
+    }
+
+    .conteudo {
+        width: 100%;
+    }
+
+    .conteudo h2 {
+        font-size: 1.5rem;
+    }
+
+    .conteudo p {
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Calorias</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="head">
+        <h1>Calculadora de calorias</h1>
+        <p>Preencha os campos com seus dados e veja quantas calorias você precisa consumir por dia para seus objetivos.
+        </p>
+    </div>
+    <div class="calc">
+        <label for="sexo">Sexo:</label>
+        <select name="sexo" id="sexo">
+            <option value="opcao">---------</option>
+            <option value="homem">Homem</option>
+            <option value="mulher">Mulher</option>
+        </select> <br><br>
+        <label for="idade">Idade:</label>
+        <input type="number" name="idade" id="idade"><br><br>
+        <label for="peso">Peso:</label>
+        <input type="number" name="peso" id="peso"><br><br>
+        <label for="altura">Altura:</label>
+        <input type="number" name="altura" id="altura"> <br><br>
+        <label for="fa">Fator de Atividade:</label> <br><br>
+        <select name="fa" id="fa">
+            <option value="escolha">Escolha seu nível de atividade</option>
+            <option value="sedentario">Sedentário (nenhum exercício)</option>
+            <option value="leve">Leve (1–3x/semana)</option>
+            <option value="moderado">Moderado (3–5x/semana)</option>
+            <option value="intenso">Intenso (5–6x/semana)</option>
+            <option value="muito intenso">Muito intenso (2 treinos/dia / trabalho físico pesado)</option>
+        </select> <br><br>
+
+        <button onclick="calcular()">Calcular</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <div class="conteudo">
+<div class="card01">
+    
+            <h2>Como funciona a calculadora de calorias</h2>
+    
+            <p>
+                Essa calculadora foi desenvolvida para estimar quantas calorias uma pessoa precisa consumir por dia, de acordo
+                com suas características físicas e nível de atividade, considerando três objetivos:
+            </p>
+    
+            <ul>
+                <li>🔻 Emagrecer</li>
+                <li>⚖️ Manter o peso</li>
+                <li>🔺 Ganhar peso</li>
+            </ul>
+    
+            <p>Ela se baseia em fórmulas cientificamente validadas e amplamente utilizadas na nutrição esportiva.</p>
+</div>
+
+        <div class="card02">
+            <h2>Dados informados pelo usuário</h2>
+            <p>Para realizar os cálculos, a calculadora utiliza as seguintes informações:</p>
+            <h3>🔹 Sexo</h3>
+            <p>
+                O sexo biológico influencia diretamente o gasto energético, pois homens e mulheres possuem, em média, diferenças
+                hormonais, composição corporal e massa muscular.
+            </p>
+            <h3>🔹 Idade</h3>
+            <p>Com o passar dos anos, o metabolismo tende a desacelerar. Por isso, a idade é um fator essencial no cálculo.</p>
+            <h3>🔹 Peso (kg)</h3>
+            <p>
+                O peso corporal influencia diretamente o gasto calórico. Quanto maior o peso, maior tende a ser o consumo de
+                energia para manter as funções do corpo.
+            </p>
+            <h3>🔹 Altura (cm)</h3>
+            <p>A altura ajuda a estimar o tamanho corporal total, impactando no gasto energético basal.</p>
+            <h3>🔹 Fator de Atividade Física</h3>
+            <p>
+                Representa o quanto a pessoa se movimenta no dia a dia e pratica exercícios físicos, variando de sedentário a
+                muito intenso.
+            </p>
+        </div>
+<div class="card01">
+    
+            <h2>O que é TMB (Taxa Metabólica Basal)</h2>
+    
+            <p>A TMB é a quantidade mínima de calorias que o corpo precisa para se manter vivo em repouso absoluto.</p>
+    
+            <p>Ela considera apenas funções vitais, como:</p>
+    
+            <ul>
+                <li>Respiração</li>
+                <li>Circulação sanguínea</li>
+                <li>Funcionamento do cérebro</li>
+                <li>Regulação da temperatura corporal</li>
+            </ul>
+    
+            <p>👉 Ou seja: é o gasto calórico sem considerar nenhuma atividade física.</p>
+</div>
+
+        <div class="card02">
+            <h2>Fórmula utilizada para o cálculo da TMB</h2>
+            <p>
+                A calculadora utiliza a fórmula de Mifflin-St Jeor, considerada atualmente a mais precisa para a população geral
+                e praticantes de atividade física.
+            </p>
+            <h3>🔹 Para homens:</h3>
+            <p>Leva em conta peso, altura e idade</p>
+            <p>Possui um pequeno ajuste positivo (+5)</p>
+            <h3>🔹 Para mulheres:</h3>
+            <p>Usa os mesmos dados</p>
+            <p>Aplica um ajuste negativo (−161), devido a diferenças fisiológicas médias</p>
+            <p>Essa fórmula é amplamente recomendada por estudos científicos e profissionais da área da saúde.</p>
+        </div>
+<div class="card01">
+    
+            <h2>O que é TMT (Gasto Calórico Total)</h2>
+    
+            <p>O TMT representa o total de calorias que o corpo gasta ao longo do dia, incluindo:</p>
+    
+            <ul>
+                <li>Metabolismo basal</li>
+                <li>Atividades do dia a dia</li>
+                <li>Exercícios físicos</li>
+            </ul>
+    
+            <p>
+                Para chegar ao TMT, a calculadora multiplica a TMB por um fator de atividade, que varia conforme o nível de
+                exercício da pessoa.
+            </p>
+</div>
+
+        <div class="card02">
+            <h2>Fatores de atividade utilizados</h2>
+            <p>Os fatores aplicados são:</p>
+            <ul>
+                <li>Sedentário (1.2) – Pouca ou nenhuma atividade física</li>
+                <li>Leve (1.375) – Exercício leve de 1 a 3 vezes por semana</li>
+                <li>Moderado (1.55) – Exercício de 3 a 5 vezes por semana</li>
+                <li>Intenso (1.725) – Exercício de 5 a 6 vezes por semana</li>
+                <li>Muito intenso (1.9) – Dois treinos diários ou trabalho físico pesado</li>
+            </ul>
+            <p>Esses valores são padrões utilizados em cálculos nutricionais.</p>
+            <h2>Definição dos objetivos calóricos</h2>
+            <p>Após calcular o TMT (calorias de manutenção), a calculadora apresenta três cenários:</p>
+            <h3>🔻 Emagrecer</h3>
+            <ul>
+                <li>Redução média de 500 calorias</li>
+                <li>Déficit calórico seguro e sustentável</li>
+                <li>Indicado para perda de gordura preservando massa muscular</li>
+            </ul>
+            <h3>⚖️ Manter o peso</h3>
+            <ul>
+                <li>Consumo igual ao TMT</li>
+                <li>Ideal para estabilização do peso corporal</li>
+            </ul>
+            <h3>🔺 Ganhar peso</h3>
+            <ul>
+                <li>Aumento médio de 500 calorias</li>
+                <li>Superávit calórico voltado ao ganho de massa corporal</li>
+            </ul>
+            <p>👉 Esses valores são estimativas iniciais e podem ser ajustados conforme a resposta individual do organismo.</p>
+        </div>
+
+        <div class="card01">
+            <h2>Importante saber</h2>
+            <ul>
+                <li>Os resultados são estimativas, não substituem avaliação profissional</li>
+                <li>O metabolismo pode variar de pessoa para pessoa</li>
+                <li>O ideal é usar os valores como ponto de partida e ajustar com o tempo</li>
+            </ul>
+            <h2>Resumo final</h2>
+            <p>
+                Esta calculadora utiliza dados pessoais + fórmula atualizada + nível de atividade para fornecer uma estimativa
+                confiável de consumo calórico diário, ajudando o usuário a tomar decisões mais conscientes sobre sua alimentação
+                e seus objetivos físicos.
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
